@@ -1,0 +1,87 @@
+openapi: 3.0.0
+info:
+  title: File Controller API
+  version: 1.0.0
+servers:
+  - url: http://localhost:8083
+paths:
+  /files:
+    get:
+      summary: Get list of files
+      responses:
+        '200':
+          description: Successful operation
+    delete:
+      summary: Delete a file
+      parameters:
+        - name: file
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+  /files/upload:
+    post:
+      summary: Upload a file
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Successful operation
+  /files/images/download:
+    get:
+      summary: Download an image file
+      parameters:
+        - name: file
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+  /files/images/show:
+    get:
+      summary: Show an image file
+      parameters:
+        - name: file
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+  /files/videos/download:
+    get:
+      summary: Download a video file
+      parameters:
+        - name: file
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+  /files/videos/show:
+    get:
+      summary: Show a video file
+      parameters:
+        - name: file
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation

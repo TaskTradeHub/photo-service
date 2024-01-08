@@ -1,0 +1,18 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 200MB
+      max-request-size: 200MB
+
+minio:
+  bucket: images
+  url: http://minio:9000
+  accessKey: minioadmin
+  secretKey: minioadmin
+#  bucket: ${MINIO_BUCKET}
+#  url: ${MINIO_URL}
+#  accessKey: ${MINIO_ACCESS_KEY}
+#  secretKey: ${MINIO_SECRET_KEY}
+
+server:
+  port: 8083
